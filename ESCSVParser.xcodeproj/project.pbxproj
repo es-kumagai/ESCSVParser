@@ -7,54 +7,145 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B1C06F811B56815D00FD538C /* ESCSVParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C06F801B56815D00FD538C /* ESCSVParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B1C06F881B56815D00FD538C /* ESCSVParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C06F7D1B56815D00FD538C /* ESCSVParser.framework */; };
-		B1C06F8D1B56815D00FD538C /* ESCSVParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06F8C1B56815D00FD538C /* ESCSVParserTests.swift */; };
+		B12E05E11B57C8E50019D28D /* CSVRawColumnType_OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E05E01B57C8E50019D28D /* CSVRawColumnType_OSX.swift */; };
+		B12E05E31B57C9440019D28D /* RawColumnTypeConvertTest_OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E05E21B57C9440019D28D /* RawColumnTypeConvertTest_OSX.swift */; };
+		B1C06FA61B56821700FD538C /* ESCSVParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C06F9C1B56821700FD538C /* ESCSVParser.framework */; };
+		B1C06FAB1B56821700FD538C /* ESCSVParser_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FAA1B56821700FD538C /* ESCSVParser_OSXTests.swift */; };
+		B1C06FBB1B56823D00FD538C /* ESCSVParser_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C06FBA1B56823D00FD538C /* ESCSVParser_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1C06FC21B56823D00FD538C /* ESCSVParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C06FB81B56823D00FD538C /* ESCSVParser.framework */; };
+		B1C06FC71B56823D00FD538C /* ESCSVParser_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FC61B56823D00FD538C /* ESCSVParser_iOSTests.swift */; };
+		B1C06FD01B56828900FD538C /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FCF1B56828900FD538C /* CSV.swift */; };
+		B1C06FD11B56828C00FD538C /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FCF1B56828900FD538C /* CSV.swift */; };
+		B1C06FD41B5682FF00FD538C /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FD31B5682FF00FD538C /* CSVParser.swift */; };
+		B1C06FD51B5682FF00FD538C /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FD31B5682FF00FD538C /* CSVParser.swift */; };
+		B1C06FDA1B5683A100FD538C /* CSVRawLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FD91B5683A100FD538C /* CSVRawLine.swift */; };
+		B1C06FDB1B5683A100FD538C /* CSVRawLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FD91B5683A100FD538C /* CSVRawLine.swift */; };
+		B1C06FDE1B5683CE00FD538C /* CSVRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FDD1B5683CE00FD538C /* CSVRow.swift */; };
+		B1C06FDF1B5683CE00FD538C /* CSVRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FDD1B5683CE00FD538C /* CSVRow.swift */; };
+		B1C06FE11B5683E900FD538C /* CSVRawColumnConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FE01B5683E900FD538C /* CSVRawColumnConvertible.swift */; };
+		B1C06FE21B5683E900FD538C /* CSVRawColumnConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FE01B5683E900FD538C /* CSVRawColumnConvertible.swift */; };
+		B1C06FE41B56841F00FD538C /* CSVParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FE31B56841F00FD538C /* CSVParserError.swift */; };
+		B1C06FE51B56841F00FD538C /* CSVParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FE31B56841F00FD538C /* CSVParserError.swift */; };
+		B1C06FE81B56846F00FD538C /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FE71B56846F00FD538C /* Converter.swift */; };
+		B1C06FE91B56846F00FD538C /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FE71B56846F00FD538C /* Converter.swift */; };
+		B1C06FEB1B56848C00FD538C /* ConverterMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FEA1B56848C00FD538C /* ConverterMethods.swift */; };
+		B1C06FEC1B56848C00FD538C /* ConverterMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FEA1B56848C00FD538C /* ConverterMethods.swift */; };
+		B1C06FF31B56860E00FD538C /* Sample1.csv in Resources */ = {isa = PBXBuildFile; fileRef = B1C06FF11B56860E00FD538C /* Sample1.csv */; };
+		B1C06FF41B56860E00FD538C /* Sample1.csv in Resources */ = {isa = PBXBuildFile; fileRef = B1C06FF11B56860E00FD538C /* Sample1.csv */; };
+		B1C06FF71B56867700FD538C /* Sample2 (not supported).csv in Resources */ = {isa = PBXBuildFile; fileRef = B1C06FF51B56867700FD538C /* Sample2 (not supported).csv */; };
+		B1C06FF81B56867700FD538C /* Sample2 (not supported).csv in Resources */ = {isa = PBXBuildFile; fileRef = B1C06FF51B56867700FD538C /* Sample2 (not supported).csv */; };
+		B1C06FFB1B568AA800FD538C /* Sample1Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FF91B568AA800FD538C /* Sample1Row.swift */; };
+		B1C06FFC1B568AA800FD538C /* Sample1Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FF91B568AA800FD538C /* Sample1Row.swift */; };
+		B1C06FFE1B568C0900FD538C /* CSVRawColumnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FFD1B568C0900FD538C /* CSVRawColumnType.swift */; };
+		B1C06FFF1B568C0900FD538C /* CSVRawColumnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FFD1B568C0900FD538C /* CSVRawColumnType.swift */; };
+		B1C070021B56B34400FD538C /* RawColumnTypeConvertTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C070001B56B34400FD538C /* RawColumnTypeConvertTest.swift */; };
+		B1C070031B56B34400FD538C /* RawColumnTypeConvertTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C070001B56B34400FD538C /* RawColumnTypeConvertTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B1C06F891B56815D00FD538C /* PBXContainerItemProxy */ = {
+		B1C06FA71B56821700FD538C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B1C06F741B56815D00FD538C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B1C06F7C1B56815D00FD538C;
-			remoteInfo = ESCSVParser;
+			remoteGlobalIDString = B1C06F9B1B56821700FD538C;
+			remoteInfo = ESCSVParser_OSX;
+		};
+		B1C06FC31B56823D00FD538C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1C06F741B56815D00FD538C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1C06FB71B56823D00FD538C;
+			remoteInfo = ESCSVParser_iOS;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B1C06F7D1B56815D00FD538C /* ESCSVParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ESCSVParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B12E05E01B57C8E50019D28D /* CSVRawColumnType_OSX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRawColumnType_OSX.swift; sourceTree = "<group>"; };
+		B12E05E21B57C9440019D28D /* RawColumnTypeConvertTest_OSX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawColumnTypeConvertTest_OSX.swift; sourceTree = "<group>"; };
 		B1C06F801B56815D00FD538C /* ESCSVParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESCSVParser.h; sourceTree = "<group>"; };
 		B1C06F821B56815D00FD538C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B1C06F871B56815D00FD538C /* ESCSVParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESCSVParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C06F8C1B56815D00FD538C /* ESCSVParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESCSVParserTests.swift; sourceTree = "<group>"; };
 		B1C06F8E1B56815D00FD538C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1C06F9C1B56821700FD538C /* ESCSVParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ESCSVParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1C06F9E1B56821700FD538C /* ESCSVParser_OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESCSVParser_OSX.h; sourceTree = "<group>"; };
+		B1C06FA01B56821700FD538C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1C06FA51B56821700FD538C /* ESCSVParser_OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESCSVParser_OSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1C06FAA1B56821700FD538C /* ESCSVParser_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESCSVParser_OSXTests.swift; sourceTree = "<group>"; };
+		B1C06FAC1B56821700FD538C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1C06FB81B56823D00FD538C /* ESCSVParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ESCSVParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1C06FBA1B56823D00FD538C /* ESCSVParser_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESCSVParser_iOS.h; sourceTree = "<group>"; };
+		B1C06FBC1B56823D00FD538C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1C06FC11B56823D00FD538C /* ESCSVParser_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESCSVParser_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1C06FC61B56823D00FD538C /* ESCSVParser_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESCSVParser_iOSTests.swift; sourceTree = "<group>"; };
+		B1C06FC81B56823D00FD538C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1C06FCF1B56828900FD538C /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
+		B1C06FD31B5682FF00FD538C /* CSVParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
+		B1C06FD91B5683A100FD538C /* CSVRawLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRawLine.swift; sourceTree = "<group>"; };
+		B1C06FDD1B5683CE00FD538C /* CSVRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRow.swift; sourceTree = "<group>"; };
+		B1C06FE01B5683E900FD538C /* CSVRawColumnConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRawColumnConvertible.swift; sourceTree = "<group>"; };
+		B1C06FE31B56841F00FD538C /* CSVParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVParserError.swift; sourceTree = "<group>"; };
+		B1C06FE71B56846F00FD538C /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		B1C06FEA1B56848C00FD538C /* ConverterMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterMethods.swift; sourceTree = "<group>"; };
+		B1C06FEE1B56850C00FD538C /* ConverterMethodsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterMethodsGenerator.swift; sourceTree = "<group>"; };
+		B1C06FF11B56860E00FD538C /* Sample1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 2; path = Sample1.csv; sourceTree = "<group>"; };
+		B1C06FF51B56867700FD538C /* Sample2 (not supported).csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 2; path = "Sample2 (not supported).csv"; sourceTree = "<group>"; };
+		B1C06FF91B568AA800FD538C /* Sample1Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sample1Row.swift; sourceTree = "<group>"; };
+		B1C06FFD1B568C0900FD538C /* CSVRawColumnType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRawColumnType.swift; sourceTree = "<group>"; };
+		B1C070001B56B34400FD538C /* RawColumnTypeConvertTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawColumnTypeConvertTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B1C06F791B56815D00FD538C /* Frameworks */ = {
+		B1C06F981B56821700FD538C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1C06F841B56815D00FD538C /* Frameworks */ = {
+		B1C06FA21B56821700FD538C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1C06F881B56815D00FD538C /* ESCSVParser.framework in Frameworks */,
+				B1C06FA61B56821700FD538C /* ESCSVParser.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1C06FB41B56823D00FD538C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1C06FBE1B56823D00FD538C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1C06FC21B56823D00FD538C /* ESCSVParser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B12E05DF1B57C8C80019D28D /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B12E05E01B57C8E50019D28D /* CSVRawColumnType_OSX.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		B1C06F731B56815D00FD538C = {
 			isa = PBXGroup;
 			children = (
+				B1C06FED1B5684DD00FD538C /* Tool */,
 				B1C06F7F1B56815D00FD538C /* ESCSVParser */,
+				B1C06F9D1B56821700FD538C /* ESCSVParser_OSX */,
+				B1C06FB91B56823D00FD538C /* ESCSVParser_iOS */,
 				B1C06F8B1B56815D00FD538C /* ESCSVParserTests */,
+				B1C06FA91B56821700FD538C /* ESCSVParser_OSXTests */,
+				B1C06FC51B56823D00FD538C /* ESCSVParser_iOSTests */,
 				B1C06F7E1B56815D00FD538C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,8 +153,10 @@
 		B1C06F7E1B56815D00FD538C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1C06F7D1B56815D00FD538C /* ESCSVParser.framework */,
-				B1C06F871B56815D00FD538C /* ESCSVParserTests.xctest */,
+				B1C06F9C1B56821700FD538C /* ESCSVParser.framework */,
+				B1C06FA51B56821700FD538C /* ESCSVParser_OSXTests.xctest */,
+				B1C06FB81B56823D00FD538C /* ESCSVParser.framework */,
+				B1C06FC11B56823D00FD538C /* ESCSVParser_iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +166,10 @@
 			children = (
 				B1C06F801B56815D00FD538C /* ESCSVParser.h */,
 				B1C06F821B56815D00FD538C /* Info.plist */,
+				B1C06FCF1B56828900FD538C /* CSV.swift */,
+				B1C06FDC1B5683B700FD538C /* Protocol */,
+				B1C06FD21B5682D900FD538C /* Parser */,
+				B1C06FE61B56843D00FD538C /* Convert */,
 			);
 			path = ESCSVParser;
 			sourceTree = "<group>";
@@ -80,60 +177,190 @@
 		B1C06F8B1B56815D00FD538C /* ESCSVParserTests */ = {
 			isa = PBXGroup;
 			children = (
+				B1C06FF01B5685E900FD538C /* Data */,
 				B1C06F8C1B56815D00FD538C /* ESCSVParserTests.swift */,
+				B1C070001B56B34400FD538C /* RawColumnTypeConvertTest.swift */,
 				B1C06F8E1B56815D00FD538C /* Info.plist */,
 			);
 			path = ESCSVParserTests;
 			sourceTree = "<group>";
 		};
+		B1C06F9D1B56821700FD538C /* ESCSVParser_OSX */ = {
+			isa = PBXGroup;
+			children = (
+				B1C06F9E1B56821700FD538C /* ESCSVParser_OSX.h */,
+				B12E05DF1B57C8C80019D28D /* Protocol */,
+				B1C06FA01B56821700FD538C /* Info.plist */,
+			);
+			path = ESCSVParser_OSX;
+			sourceTree = "<group>";
+		};
+		B1C06FA91B56821700FD538C /* ESCSVParser_OSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1C06FAA1B56821700FD538C /* ESCSVParser_OSXTests.swift */,
+				B12E05E21B57C9440019D28D /* RawColumnTypeConvertTest_OSX.swift */,
+				B1C06FAC1B56821700FD538C /* Info.plist */,
+			);
+			path = ESCSVParser_OSXTests;
+			sourceTree = "<group>";
+		};
+		B1C06FB91B56823D00FD538C /* ESCSVParser_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B1C06FBA1B56823D00FD538C /* ESCSVParser_iOS.h */,
+				B1C06FBC1B56823D00FD538C /* Info.plist */,
+			);
+			path = ESCSVParser_iOS;
+			sourceTree = "<group>";
+		};
+		B1C06FC51B56823D00FD538C /* ESCSVParser_iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1C06FC61B56823D00FD538C /* ESCSVParser_iOSTests.swift */,
+				B1C06FC81B56823D00FD538C /* Info.plist */,
+			);
+			path = ESCSVParser_iOSTests;
+			sourceTree = "<group>";
+		};
+		B1C06FD21B5682D900FD538C /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				B1C06FD31B5682FF00FD538C /* CSVParser.swift */,
+				B1C06FE31B56841F00FD538C /* CSVParserError.swift */,
+				B1C06FD91B5683A100FD538C /* CSVRawLine.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		B1C06FDC1B5683B700FD538C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B1C06FDD1B5683CE00FD538C /* CSVRow.swift */,
+				B1C06FE01B5683E900FD538C /* CSVRawColumnConvertible.swift */,
+				B1C06FFD1B568C0900FD538C /* CSVRawColumnType.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		B1C06FE61B56843D00FD538C /* Convert */ = {
+			isa = PBXGroup;
+			children = (
+				B1C06FE71B56846F00FD538C /* Converter.swift */,
+				B1C06FEA1B56848C00FD538C /* ConverterMethods.swift */,
+			);
+			path = Convert;
+			sourceTree = "<group>";
+		};
+		B1C06FED1B5684DD00FD538C /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				B1C06FEE1B56850C00FD538C /* ConverterMethodsGenerator.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		B1C06FF01B5685E900FD538C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B1C06FF11B56860E00FD538C /* Sample1.csv */,
+				B1C06FF51B56867700FD538C /* Sample2 (not supported).csv */,
+				B1C06FF91B568AA800FD538C /* Sample1Row.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		B1C06F7A1B56815D00FD538C /* Headers */ = {
+		B1C06F991B56821700FD538C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1C06F811B56815D00FD538C /* ESCSVParser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1C06FB51B56823D00FD538C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1C06FBB1B56823D00FD538C /* ESCSVParser_iOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B1C06F7C1B56815D00FD538C /* ESCSVParser */ = {
+		B1C06F9B1B56821700FD538C /* ESCSVParser_OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B1C06F911B56815D00FD538C /* Build configuration list for PBXNativeTarget "ESCSVParser" */;
+			buildConfigurationList = B1C06FAD1B56821700FD538C /* Build configuration list for PBXNativeTarget "ESCSVParser_OSX" */;
 			buildPhases = (
-				B1C06F781B56815D00FD538C /* Sources */,
-				B1C06F791B56815D00FD538C /* Frameworks */,
-				B1C06F7A1B56815D00FD538C /* Headers */,
-				B1C06F7B1B56815D00FD538C /* Resources */,
+				B1C06F971B56821700FD538C /* Sources */,
+				B1C06F981B56821700FD538C /* Frameworks */,
+				B1C06F991B56821700FD538C /* Headers */,
+				B1C06F9A1B56821700FD538C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ESCSVParser;
-			productName = ESCSVParser;
-			productReference = B1C06F7D1B56815D00FD538C /* ESCSVParser.framework */;
+			name = ESCSVParser_OSX;
+			productName = ESCSVParser_OSX;
+			productReference = B1C06F9C1B56821700FD538C /* ESCSVParser.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B1C06F861B56815D00FD538C /* ESCSVParserTests */ = {
+		B1C06FA41B56821700FD538C /* ESCSVParser_OSXTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B1C06F941B56815D00FD538C /* Build configuration list for PBXNativeTarget "ESCSVParserTests" */;
+			buildConfigurationList = B1C06FB01B56821700FD538C /* Build configuration list for PBXNativeTarget "ESCSVParser_OSXTests" */;
 			buildPhases = (
-				B1C06F831B56815D00FD538C /* Sources */,
-				B1C06F841B56815D00FD538C /* Frameworks */,
-				B1C06F851B56815D00FD538C /* Resources */,
+				B1C06FA11B56821700FD538C /* Sources */,
+				B1C06FA21B56821700FD538C /* Frameworks */,
+				B1C06FA31B56821700FD538C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B1C06F8A1B56815D00FD538C /* PBXTargetDependency */,
+				B1C06FA81B56821700FD538C /* PBXTargetDependency */,
 			);
-			name = ESCSVParserTests;
-			productName = ESCSVParserTests;
-			productReference = B1C06F871B56815D00FD538C /* ESCSVParserTests.xctest */;
+			name = ESCSVParser_OSXTests;
+			productName = ESCSVParser_OSXTests;
+			productReference = B1C06FA51B56821700FD538C /* ESCSVParser_OSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B1C06FB71B56823D00FD538C /* ESCSVParser_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1C06FC91B56823D00FD538C /* Build configuration list for PBXNativeTarget "ESCSVParser_iOS" */;
+			buildPhases = (
+				B1C06FB31B56823D00FD538C /* Sources */,
+				B1C06FB41B56823D00FD538C /* Frameworks */,
+				B1C06FB51B56823D00FD538C /* Headers */,
+				B1C06FB61B56823D00FD538C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ESCSVParser_iOS;
+			productName = ESCSVParser_iOS;
+			productReference = B1C06FB81B56823D00FD538C /* ESCSVParser.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B1C06FC01B56823D00FD538C /* ESCSVParser_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1C06FCC1B56823D00FD538C /* Build configuration list for PBXNativeTarget "ESCSVParser_iOSTests" */;
+			buildPhases = (
+				B1C06FBD1B56823D00FD538C /* Sources */,
+				B1C06FBE1B56823D00FD538C /* Frameworks */,
+				B1C06FBF1B56823D00FD538C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1C06FC41B56823D00FD538C /* PBXTargetDependency */,
+			);
+			name = ESCSVParser_iOSTests;
+			productName = ESCSVParser_iOSTests;
+			productReference = B1C06FC11B56823D00FD538C /* ESCSVParser_iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -142,13 +369,20 @@
 		B1C06F741B56815D00FD538C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "EasyStyle G.K.";
 				TargetAttributes = {
-					B1C06F7C1B56815D00FD538C = {
+					B1C06F9B1B56821700FD538C = {
 						CreatedOnToolsVersion = 7.0;
 					};
-					B1C06F861B56815D00FD538C = {
+					B1C06FA41B56821700FD538C = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					B1C06FB71B56823D00FD538C = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					B1C06FC01B56823D00FD538C = {
 						CreatedOnToolsVersion = 7.0;
 					};
 				};
@@ -165,52 +399,116 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B1C06F7C1B56815D00FD538C /* ESCSVParser */,
-				B1C06F861B56815D00FD538C /* ESCSVParserTests */,
+				B1C06F9B1B56821700FD538C /* ESCSVParser_OSX */,
+				B1C06FB71B56823D00FD538C /* ESCSVParser_iOS */,
+				B1C06FA41B56821700FD538C /* ESCSVParser_OSXTests */,
+				B1C06FC01B56823D00FD538C /* ESCSVParser_iOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B1C06F7B1B56815D00FD538C /* Resources */ = {
+		B1C06F9A1B56821700FD538C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1C06F851B56815D00FD538C /* Resources */ = {
+		B1C06FA31B56821700FD538C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C06FF31B56860E00FD538C /* Sample1.csv in Resources */,
+				B1C06FF71B56867700FD538C /* Sample2 (not supported).csv in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1C06FB61B56823D00FD538C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1C06FBF1B56823D00FD538C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1C06FF41B56860E00FD538C /* Sample1.csv in Resources */,
+				B1C06FF81B56867700FD538C /* Sample2 (not supported).csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B1C06F781B56815D00FD538C /* Sources */ = {
+		B1C06F971B56821700FD538C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C06FE41B56841F00FD538C /* CSVParserError.swift in Sources */,
+				B1C06FD01B56828900FD538C /* CSV.swift in Sources */,
+				B1C06FDA1B5683A100FD538C /* CSVRawLine.swift in Sources */,
+				B1C06FE81B56846F00FD538C /* Converter.swift in Sources */,
+				B1C06FFE1B568C0900FD538C /* CSVRawColumnType.swift in Sources */,
+				B1C06FEB1B56848C00FD538C /* ConverterMethods.swift in Sources */,
+				B1C06FD41B5682FF00FD538C /* CSVParser.swift in Sources */,
+				B1C06FE11B5683E900FD538C /* CSVRawColumnConvertible.swift in Sources */,
+				B12E05E11B57C8E50019D28D /* CSVRawColumnType_OSX.swift in Sources */,
+				B1C06FDE1B5683CE00FD538C /* CSVRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1C06F831B56815D00FD538C /* Sources */ = {
+		B1C06FA11B56821700FD538C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1C06F8D1B56815D00FD538C /* ESCSVParserTests.swift in Sources */,
+				B12E05E31B57C9440019D28D /* RawColumnTypeConvertTest_OSX.swift in Sources */,
+				B1C070021B56B34400FD538C /* RawColumnTypeConvertTest.swift in Sources */,
+				B1C06FFB1B568AA800FD538C /* Sample1Row.swift in Sources */,
+				B1C06FAB1B56821700FD538C /* ESCSVParser_OSXTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1C06FB31B56823D00FD538C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1C06FE51B56841F00FD538C /* CSVParserError.swift in Sources */,
+				B1C06FD11B56828C00FD538C /* CSV.swift in Sources */,
+				B1C06FDB1B5683A100FD538C /* CSVRawLine.swift in Sources */,
+				B1C06FE91B56846F00FD538C /* Converter.swift in Sources */,
+				B1C06FFF1B568C0900FD538C /* CSVRawColumnType.swift in Sources */,
+				B1C06FEC1B56848C00FD538C /* ConverterMethods.swift in Sources */,
+				B1C06FD51B5682FF00FD538C /* CSVParser.swift in Sources */,
+				B1C06FE21B5683E900FD538C /* CSVRawColumnConvertible.swift in Sources */,
+				B1C06FDF1B5683CE00FD538C /* CSVRow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1C06FBD1B56823D00FD538C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1C070031B56B34400FD538C /* RawColumnTypeConvertTest.swift in Sources */,
+				B1C06FFC1B568AA800FD538C /* Sample1Row.swift in Sources */,
+				B1C06FC71B56823D00FD538C /* ESCSVParser_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B1C06F8A1B56815D00FD538C /* PBXTargetDependency */ = {
+		B1C06FA81B56821700FD538C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B1C06F7C1B56815D00FD538C /* ESCSVParser */;
-			targetProxy = B1C06F891B56815D00FD538C /* PBXContainerItemProxy */;
+			target = B1C06F9B1B56821700FD538C /* ESCSVParser_OSX */;
+			targetProxy = B1C06FA71B56821700FD538C /* PBXContainerItemProxy */;
+		};
+		B1C06FC41B56823D00FD538C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1C06FB71B56823D00FD538C /* ESCSVParser_iOS */;
+			targetProxy = B1C06FC31B56823D00FD538C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -251,7 +549,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -291,7 +590,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -299,61 +599,132 @@
 			};
 			name = Release;
 		};
-		B1C06F921B56815D00FD538C /* Debug */ = {
+		B1C06FAE1B56821700FD538C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = ESCSVParser/Info.plist;
+				INFOPLIST_FILE = ESCSVParser_OSX/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-style.appid.ESCSVParser";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-style.appid.ESCSVParser-OSX";
+				PRODUCT_NAME = ESCSVParser;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		B1C06F931B56815D00FD538C /* Release */ = {
+		B1C06FAF1B56821700FD538C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = ESCSVParser/Info.plist;
+				INFOPLIST_FILE = ESCSVParser_OSX/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-style.appid.ESCSVParser";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-style.appid.ESCSVParser-OSX";
+				PRODUCT_NAME = ESCSVParser;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		B1C06F951B56815D00FD538C /* Debug */ = {
+		B1C06FB11B56821700FD538C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ESCSVParserTests/Info.plist;
+				INFOPLIST_FILE = ESCSVParser_OSXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-style.appid.ESCSVParserTests";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-style.appid.ESCSVParser-OSXTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		B1C06F961B56815D00FD538C /* Release */ = {
+		B1C06FB21B56821700FD538C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ESCSVParserTests/Info.plist;
+				INFOPLIST_FILE = ESCSVParser_OSXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-style.appid.ESCSVParserTests";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-style.appid.ESCSVParser-OSXTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B1C06FCA1B56823D00FD538C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ESCSVParser_iOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-style.appid.ESCSVParser-iOS";
+				PRODUCT_NAME = ESCSVParser;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B1C06FCB1B56823D00FD538C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ESCSVParser_iOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-style.appid.ESCSVParser-iOS";
+				PRODUCT_NAME = ESCSVParser;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B1C06FCD1B56823D00FD538C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = ESCSVParser_iOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-style.appid.ESCSVParser-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B1C06FCE1B56823D00FD538C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = ESCSVParser_iOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-style.appid.ESCSVParser-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -369,21 +740,41 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B1C06F911B56815D00FD538C /* Build configuration list for PBXNativeTarget "ESCSVParser" */ = {
+		B1C06FAD1B56821700FD538C /* Build configuration list for PBXNativeTarget "ESCSVParser_OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B1C06F921B56815D00FD538C /* Debug */,
-				B1C06F931B56815D00FD538C /* Release */,
+				B1C06FAE1B56821700FD538C /* Debug */,
+				B1C06FAF1B56821700FD538C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		B1C06F941B56815D00FD538C /* Build configuration list for PBXNativeTarget "ESCSVParserTests" */ = {
+		B1C06FB01B56821700FD538C /* Build configuration list for PBXNativeTarget "ESCSVParser_OSXTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B1C06F951B56815D00FD538C /* Debug */,
-				B1C06F961B56815D00FD538C /* Release */,
+				B1C06FB11B56821700FD538C /* Debug */,
+				B1C06FB21B56821700FD538C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1C06FC91B56823D00FD538C /* Build configuration list for PBXNativeTarget "ESCSVParser_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1C06FCA1B56823D00FD538C /* Debug */,
+				B1C06FCB1B56823D00FD538C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1C06FCC1B56823D00FD538C /* Build configuration list for PBXNativeTarget "ESCSVParser_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1C06FCD1B56823D00FD538C /* Debug */,
+				B1C06FCE1B56823D00FD538C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
