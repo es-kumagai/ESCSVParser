@@ -8,7 +8,7 @@
 
 /// This structure represents the entire CSV data.
 /// Generic parameter of 'CSVRow' is type of each row data.
-public struct CSV<Row:CSVRow> {
+public struct CSV<Row:CSVRowRepresentable> {
 	
 	var rows:[Row]
 	

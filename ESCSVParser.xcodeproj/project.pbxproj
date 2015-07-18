@@ -20,8 +20,8 @@
 		B1C06FD51B5682FF00FD538C /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FD31B5682FF00FD538C /* CSVParser.swift */; };
 		B1C06FDA1B5683A100FD538C /* CSVRawLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FD91B5683A100FD538C /* CSVRawLine.swift */; };
 		B1C06FDB1B5683A100FD538C /* CSVRawLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FD91B5683A100FD538C /* CSVRawLine.swift */; };
-		B1C06FDE1B5683CE00FD538C /* CSVRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FDD1B5683CE00FD538C /* CSVRow.swift */; };
-		B1C06FDF1B5683CE00FD538C /* CSVRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FDD1B5683CE00FD538C /* CSVRow.swift */; };
+		B1C06FDE1B5683CE00FD538C /* CSVRowRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FDD1B5683CE00FD538C /* CSVRowRepresentable.swift */; };
+		B1C06FDF1B5683CE00FD538C /* CSVRowRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FDD1B5683CE00FD538C /* CSVRowRepresentable.swift */; };
 		B1C06FE11B5683E900FD538C /* CSVRawColumnConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FE01B5683E900FD538C /* CSVRawColumnConvertible.swift */; };
 		B1C06FE21B5683E900FD538C /* CSVRawColumnConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FE01B5683E900FD538C /* CSVRawColumnConvertible.swift */; };
 		B1C06FE41B56841F00FD538C /* CSVParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FE31B56841F00FD538C /* CSVParserError.swift */; };
@@ -81,7 +81,7 @@
 		B1C06FCF1B56828900FD538C /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 		B1C06FD31B5682FF00FD538C /* CSVParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
 		B1C06FD91B5683A100FD538C /* CSVRawLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRawLine.swift; sourceTree = "<group>"; };
-		B1C06FDD1B5683CE00FD538C /* CSVRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRow.swift; sourceTree = "<group>"; };
+		B1C06FDD1B5683CE00FD538C /* CSVRowRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRowRepresentable.swift; sourceTree = "<group>"; };
 		B1C06FE01B5683E900FD538C /* CSVRawColumnConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRawColumnConvertible.swift; sourceTree = "<group>"; };
 		B1C06FE31B56841F00FD538C /* CSVParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVParserError.swift; sourceTree = "<group>"; };
 		B1C06FE71B56846F00FD538C /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 		B1C06FDC1B5683B700FD538C /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				B1C06FDD1B5683CE00FD538C /* CSVRow.swift */,
+				B1C06FDD1B5683CE00FD538C /* CSVRowRepresentable.swift */,
 				B1C06FE01B5683E900FD538C /* CSVRawColumnConvertible.swift */,
 				B1C06FFD1B568C0900FD538C /* CSVRawColumnType.swift */,
 			);
@@ -456,7 +456,7 @@
 				B1C06FD41B5682FF00FD538C /* CSVParser.swift in Sources */,
 				B1C06FE11B5683E900FD538C /* CSVRawColumnConvertible.swift in Sources */,
 				B12E05E11B57C8E50019D28D /* CSVRawColumnType_OSX.swift in Sources */,
-				B1C06FDE1B5683CE00FD538C /* CSVRow.swift in Sources */,
+				B1C06FDE1B5683CE00FD538C /* CSVRowRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +483,7 @@
 				B1C06FEC1B56848C00FD538C /* ConverterMethods.swift in Sources */,
 				B1C06FD51B5682FF00FD538C /* CSVParser.swift in Sources */,
 				B1C06FE21B5683E900FD538C /* CSVRawColumnConvertible.swift in Sources */,
-				B1C06FDF1B5683CE00FD538C /* CSVRow.swift in Sources */,
+				B1C06FDF1B5683CE00FD538C /* CSVRowRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

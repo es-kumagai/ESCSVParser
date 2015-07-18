@@ -1,5 +1,5 @@
 //
-//  CSVRow.swift
+//  CSVRowRepresentable.swift
 //  ESCSVParser
 //
 //  Created by Tomohiro Kumagai on H27/07/15.
@@ -11,7 +11,7 @@
 ///
 /// for example,
 ///
-///		struct SiteInfo : CSVRow {
+///		struct SiteInfo : CSVRowRepresentable {
 ///
 ///			var siteID:Int
 ///			var caption:String
@@ -26,7 +26,7 @@
 /// You can able to use type conforms to 'RowColumnConvertible' protocol,
 /// or to use Optional types that treat a type conforms to 'RowColumnConvertible' protocol or to 'RawColumnConvertible' protocol and 'RawColumnNullable' protocol.
 ///
-public protocol CSVRow {
+public protocol CSVRowRepresentable {
 	
 	static func fromRawLine(line:RawLine) throws -> Self
 }

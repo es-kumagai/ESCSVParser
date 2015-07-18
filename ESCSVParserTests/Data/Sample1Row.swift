@@ -8,7 +8,7 @@
 
 import ESCSVParser
 
-struct Sample1Row : CSVRow {
+struct Sample1Row : CSVRowRepresentable {
 	
 	var country:String
 	var capital:String

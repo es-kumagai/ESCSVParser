@@ -13,7 +13,7 @@ internal class CSVParser {
 	
 	/// load a csv file from 'path'.
 	/// This method returns an array of the csv data parsed by each line.
-	static func loadFromPath<Row:CSVRow>(path:String, skipHeader:Bool) throws -> [Row] {
+	static func loadFromPath<Row:CSVRowRepresentable>(path:String, skipHeader:Bool) throws -> [Row] {
 		
 		var results = [Row]()
 		
