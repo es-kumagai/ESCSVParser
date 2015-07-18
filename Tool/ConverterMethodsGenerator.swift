@@ -16,17 +16,19 @@ for j in startCode ... endCode {
 	var tuples = [String]()
 	var values = [String]()
 	
+	parameters.append("Result")
+	
 	for (i, char) in (startCode ... j).enumerate() {
 		
 		let typeName = String(UnicodeScalar(char))
 		let valueName = typeName.lowercaseString
 		
-		let argumentPrefix = (i == 0 ? "" : "_ ")
+		let argumentPrefix = (i == 0 ? "from " : "_ ")
 		
 		parameters.append("\(typeName):RawColumnConvertible")
 		arguments.append("\(argumentPrefix)\(valueName):Int")
 		tuples.append("\(typeName)")
-		values.append("self.column(\(valueName)) as \(typeName)\(typeSuffix)")
+		values.append("self.column(\(valueName)) as \(typeName)")
 	}
 	
 	let params = ", ".join(parameters)
@@ -35,9 +37,9 @@ for j in startCode ... endCode {
 	let vals = ", ".join(values)
 	
 	results += [""]
-	results += ["\tpublic func columns<\(params)>(\(args)) throws -> Converter<(\(tups))> {"]
+	results += ["\tpublic func make<\(params)>(creation:(\(tups))->Result)(\(args)) throws -> Result {"]
 	results += [""]
-	results += ["\t\treturn try Converter((\(vals)))"]
+	results += ["\t\treturn try Converter((\(vals))).into(creation)"]
 	results += ["\t}"]
 }
 

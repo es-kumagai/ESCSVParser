@@ -19,7 +19,7 @@
 ///
 ///			static func fromRawLine(line: RawLine) throws -> SiteInfo {
 ///
-///				return try line.columns(1, 2, 3).into(SiteInfo.init)
+///				return try line.make(SiteInfo.init)(from: 1, 2, 3)
 ///			}
 ///		}
 ///

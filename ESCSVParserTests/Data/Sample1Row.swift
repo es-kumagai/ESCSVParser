@@ -17,6 +17,6 @@ struct Sample1Row : CSVRow {
 	
 	static func fromRawLine(line: RawLine) throws -> Sample1Row {
 		
-		return try line.columns(1, 2, 3, 4).into(Sample1Row.init)
+		return try line.make(Sample1Row.init)(from: 1, 2, 3, 4)
 	}
 }
