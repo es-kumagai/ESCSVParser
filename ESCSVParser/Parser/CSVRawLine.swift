@@ -12,14 +12,14 @@
 /// An optional<T:RawColumnConvertible> type is also conforms to 'RawColumnConvertible' protocol.
 public struct RawLine {
 	
-	var columns:[String]
+	var columns:[RawColumn]
 	
-	init(columns:String...) {
+	init(columns:RawColumn...) {
 		
 		self.init(columns: columns)
 	}
 	
-	init(columns:[String]) {
+	init(columns:[RawColumn]) {
 		
 		self.columns = columns
 	}
@@ -42,7 +42,7 @@ extension RawLine : CollectionType {
 		return self.columns.endIndex + 1
 	}
 	
-	public subscript(index:Int) -> String {
+	public subscript(index:Int) -> RawColumn {
 		
 		return self.columns[index - 1]
 	}
@@ -50,7 +50,7 @@ extension RawLine : CollectionType {
 
 extension RawLine {
 	
-	static func column<R:RawColumnConvertible>(rawColumn:String) throws -> R {
+	static func column<R:RawColumnConvertible>(rawColumn:RawColumn) throws -> R {
 		
 		guard let result = R.fromRawColumn(rawColumn) else {
 			

@@ -48,7 +48,7 @@ extension CSVParser {
 	typealias ParseIndex = String.CharacterView.Index
 	typealias ParseCharacter = String.CharacterView.Generator.Element
 	
-	typealias ColumnLocation = (column:String, start:ParseIndex,end:ParseIndex,next:ParseIndex?)
+	typealias ColumnLocation = (column:RawColumn, start:ParseIndex,end:ParseIndex,next:ParseIndex?)
 	
 	static func parseRawLine(line:String) throws -> RawLine {
 		
@@ -57,7 +57,7 @@ extension CSVParser {
 			return RawLine(columns: [])
 		}
 		
-		var results = [String]()
+		var results = [RawColumn]()
 		var location:ParseIndex = line.startIndex
 		
 		while let found = try self.parseRawColumn(line, location: location) {
@@ -99,7 +99,7 @@ extension CSVParser {
 		
 		guard location != line.endIndex else {
 			
-			return ColumnLocation(column: "", start: line.endIndex, end: line.endIndex, next: nil)
+			return ColumnLocation(column: RawColumn(), start: line.endIndex, end: line.endIndex, next: nil)
 		}
 		
 		if self.isQuoteCharacter(line, atIndex: location) {
@@ -125,7 +125,7 @@ extension CSVParser {
 					let end = location
 					let next = location.successor()
 
-					let column = (line[start..<end] as NSString).stringByReplacingOccurrencesOfString("\"\"", withString: "\"")
+					let column = RawColumn((line[start..<end] as NSString).stringByReplacingOccurrencesOfString("\"\"", withString: "\""))
 
 					if next == line.endIndex {
 						
@@ -154,7 +154,7 @@ extension CSVParser {
 		
 		guard !self.isCommaCharacter(line, atIndex: start) else {
 			
-			return (column: "", start: start, end:start, next: start.successor())
+			return (column: RawColumn(), start: start, end:start, next: start.successor())
 		}
 		
 		for var location = start; location != line.endIndex; ++location {
@@ -162,12 +162,12 @@ extension CSVParser {
 			guard !self.isCommaCharacter(line, atIndex: location) else {
 				
 				let end = location
-				let column = line[start..<end]
+				let column = RawColumn.fromString(line, ofRange: start ..< end)
 
 				return (column: column, start:start, end:end, next:location.successor())
 			}
 		}
 		
-		return (column: line[start..<line.endIndex], start:start, end:line.endIndex, next:nil)
+		return (column: RawColumn.fromString(line, ofRange: start ..< line.endIndex), start:start, end:line.endIndex, next:nil)
 	}
 }

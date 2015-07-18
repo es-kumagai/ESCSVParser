@@ -11,18 +11,18 @@
 /// You can able to convert a raw column data to any signed integer types.
 extension RawColumnConvertible where Self : SignedIntegerType {
 	
-	public static func fromRawColumn(rawColumn: String) -> Self? {
+	public static func fromRawColumn(rawColumn: RawColumn) -> Self? {
 		
-		return IntMax(rawColumn).map(self.init)
+		return IntMax(rawColumn.value).map(self.init)
 	}
 }
 
 /// You can able to convert a raw column data to any signed integer types.
 extension RawColumnConvertible where Self : UnsignedIntegerType {
 	
-	public static func fromRawColumn(rawColumn: String) -> Self? {
+	public static func fromRawColumn(rawColumn: RawColumn) -> Self? {
 		
-		return UIntMax(rawColumn).map(self.init)
+		return UIntMax(rawColumn.value).map(self.init)
 	}
 }
 
@@ -75,9 +75,9 @@ public protocol ASCIIRepresentation {
 
 extension RawColumnConvertible where Self : ASCIIRepresentation {
 	
-	public static func fromRawColumn(rawColumn: String) -> Self? {
+	public static func fromRawColumn(rawColumn: RawColumn) -> Self? {
 		
-		return self.init(rawColumn)
+		return self.init(rawColumn.value)
 	}
 }
 
@@ -101,9 +101,9 @@ extension Float : RawColumnConvertible, RawColumnNullableAndConsiderEmptyAsNull 
 
 extension String : RawColumnConvertible {
 	
-	public static func fromRawColumn(rawColumn: String) -> String? {
+	public static func fromRawColumn(rawColumn: RawColumn) -> String? {
 		
-		return rawColumn
+		return rawColumn.value
 	}
 }
 
@@ -111,9 +111,9 @@ extension String : RawColumnConvertible {
 
 extension Bool : RawColumnConvertible, RawColumnNullableAndConsiderEmptyAsNull {
 	
-	public static func fromRawColumn(rawColumn: String) -> Bool? {
+	public static func fromRawColumn(rawColumn: RawColumn) -> Bool? {
 		
-		switch rawColumn.lowercaseString {
+		switch rawColumn.value.lowercaseString {
 			
 		case "true", "yes", "1":
 			return true
@@ -131,7 +131,7 @@ extension Bool : RawColumnConvertible, RawColumnNullableAndConsiderEmptyAsNull {
 
 extension Optional : RawColumnConvertible {
 	
-	public static func fromRawColumn(rawColumn: String) -> Optional? {
+	public static func fromRawColumn(rawColumn: RawColumn) -> Optional? {
 		
 		if let type = T.self as? RawColumnNullable.Type {
 			
