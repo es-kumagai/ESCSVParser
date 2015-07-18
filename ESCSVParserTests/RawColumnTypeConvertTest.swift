@@ -74,6 +74,9 @@ class RawColumnTypeConvertTest: XCTestCase {
 		XCTAssertEqual(Bool.fromRawColumn("FalSe")!, false)
 		XCTAssertEqual(Bool.fromRawColumn("NO")!, false)
 		XCTAssertNil(Bool.fromRawColumn("XXXX"))
+		XCTAssertEqual(Bool.fromRawColumn("0")!, false)
+		XCTAssertEqual(Bool.fromRawColumn("1")!, true)
+		XCTAssertNil(Bool.fromRawColumn("2"))
 		
 		XCTAssertNil(Double?.fromRawColumn("")!)
 		XCTAssertTrue(Double?.fromRawColumn("3xxx") == nil)
