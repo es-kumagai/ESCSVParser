@@ -71,6 +71,26 @@ It is already conforms that types `Int`, `Int8`, `Int16`, `Int32`, `Int64`, `UIn
 
 If you want to other types, you will create a type which conforms to `RawColumnConvertible` protocol. A type which conforms to this protocol and implement `fromRawColumn` method can convert from a raw column value.
 
+```swift
+extension Bool : RawColumnConvertible {
+	
+	public static func fromRawColumn(rawColumn: RawColumn) -> Bool? {
+		
+		switch rawColumn.value.lowercaseString {
+			
+		case "true", "yes", "1":
+			return true
+			
+		case "false", "no", "0":
+			return false
+			
+		default:
+			return nil
+		}
+	}
+}
+```
+
 ### <a name="OptionalSupport">Optional support</a>
 
 If you want to treat the type in `Optional<T>`, the type will also need to conforms to `RawColumnNullable` protocol. A type which conforms to this protocol and implement `isRawColumnNull` method, you can specify the conditions which the value of the type will be convert to `nil`.
