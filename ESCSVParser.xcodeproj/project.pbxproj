@@ -62,6 +62,9 @@
 /* Begin PBXFileReference section */
 		B12E05E01B57C8E50019D28D /* CSVRawColumnType_OSX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRawColumnType_OSX.swift; sourceTree = "<group>"; };
 		B12E05E21B57C9440019D28D /* RawColumnTypeConvertTest_OSX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawColumnTypeConvertTest_OSX.swift; sourceTree = "<group>"; };
+		B1492FA61B5B98830043ED8D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B1492FA71B5BAEC50043ED8D /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		B1492FA81B5BB0AD0043ED8D /* ESCSVParser.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ESCSVParser.podspec; sourceTree = "<group>"; };
 		B1C06F801B56815D00FD538C /* ESCSVParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESCSVParser.h; sourceTree = "<group>"; };
 		B1C06F821B56815D00FD538C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1C06F8C1B56815D00FD538C /* ESCSVParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESCSVParserTests.swift; sourceTree = "<group>"; };
@@ -139,6 +142,9 @@
 		B1C06F731B56815D00FD538C = {
 			isa = PBXGroup;
 			children = (
+				B1492FA61B5B98830043ED8D /* README.md */,
+				B1492FA71B5BAEC50043ED8D /* LICENSE.md */,
+				B1492FA81B5BB0AD0043ED8D /* ESCSVParser.podspec */,
 				B1C06FED1B5684DD00FD538C /* Tool */,
 				B1C06F7F1B56815D00FD538C /* ESCSVParser */,
 				B1C06F9D1B56821700FD538C /* ESCSVParser_OSX */,
