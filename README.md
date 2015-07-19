@@ -90,6 +90,14 @@ extension Bool : RawColumnNullable {
 * Swift 2.0 (Xcode 7.0 beta 3)
 * iOS 8.0 or later / OS X 10.9 or later
 
+## Installation
+
+Add following line to your Podfile and run `pod install`.
+
+```ruby
+pod 'ESCSVParser', :git => 'https://github.com/EZ-NET/ESCSVParser.git'
+```
+
 ## License
 
 ESCSVParser is released under the [MIT License](LICENSE.md).
