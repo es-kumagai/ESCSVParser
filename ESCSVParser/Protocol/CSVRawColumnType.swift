@@ -129,9 +129,25 @@ extension Bool : RawColumnConvertible, RawColumnNullableAndConsiderEmptyAsNull {
 
 // MARK: Optional Type
 
-extension Optional : RawColumnConvertible {
+public protocol RawColumnConvertibleOptional : RawColumnConvertible {
 	
-	public static func fromRawColumn(rawColumn: RawColumn) -> Optional? {
+}
+
+extension RawColumnConvertibleOptional {
+	
+	public static func fromRawColumn(rawColumn: RawColumn) -> Self? {
+		
+		return nil
+	}
+}
+
+extension Optional : RawColumnConvertibleOptional {
+	
+}
+
+extension Optional where T : RawColumnConvertible {
+
+	public static func fromRawColumn(rawColumn: RawColumn) -> Optional<T>? {
 		
 		if let type = T.self as? RawColumnNullable.Type {
 			
@@ -141,18 +157,13 @@ extension Optional : RawColumnConvertible {
 			}
 		}
 		
-		if let type = T.self as? RawColumnConvertible.Type {
+		if let value = T.fromRawColumn(rawColumn) as? T {
 			
-			if let value = type.fromRawColumn(rawColumn) as? T {
-				
-				return Optional(value)
-			}
-			else {
-				
-				return nil
-			}
+			return Optional(value)
 		}
-		
-		return nil
+		else {
+			
+			return nil
+		}
 	}
 }

@@ -61,7 +61,9 @@ extension RawColumn : StringLiteralConvertible {
 /// If you want to use a type as csv column type, the type must be conforms to this protocol.
 public protocol RawColumnConvertible {
 	
-	static func fromRawColumn(rawColumn:RawColumn) -> Self?
+	typealias ConvertedType = Self
+	
+	static func fromRawColumn(rawColumn:RawColumn) -> ConvertedType?
 }
 
 /// When a type that conforms to 'RawColumnConvertible' protocol is uses as Optional,

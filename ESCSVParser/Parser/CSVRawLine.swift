@@ -50,7 +50,7 @@ extension RawLine : CollectionType {
 
 extension RawLine {
 	
-	static func column<R:RawColumnConvertible>(rawColumn:RawColumn) throws -> R {
+	static func column<R:RawColumnConvertible where R == R.ConvertedType>(rawColumn:RawColumn) throws -> R {
 		
 		guard let result = R.fromRawColumn(rawColumn) else {
 			
@@ -61,7 +61,7 @@ extension RawLine {
 	}
 	
 	/// Returns an any type that conforms to 'RawColumnConvertible' protocol that converted from raw column string at 'index'.
-	public func column<R:RawColumnConvertible>(index:Int) throws -> R {
+	public func column<R:RawColumnConvertible where R == R.ConvertedType>(index:Int) throws -> R {
 		
 		return try RawLine.column(self[index]) as R
 	}
