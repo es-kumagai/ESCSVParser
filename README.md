@@ -20,7 +20,7 @@ struct StatisticalData : CSVRowRepresentable {
 	
 	static func fromRawLine(line: RawLine) throws -> StatisticalData {
 		
-		return try line.make(Sample1Row.init)(from: 1, 2, 3, 4)
+		return try line.make(StatisticalData.init)(from: 1, 2, 3, 4)
 	}
 }
 ```
