@@ -145,11 +145,11 @@ extension Optional : RawColumnConvertibleOptional {
 	
 }
 
-extension Optional where T : RawColumnConvertible {
+extension Optional where Wrapped : RawColumnConvertible {
 
-	public static func fromRawColumn(rawColumn: RawColumn) -> Optional<T>? {
+	public static func fromRawColumn(rawColumn: RawColumn) -> Optional<Wrapped>? {
 		
-		if let type = T.self as? RawColumnNullable.Type {
+		if let type = Wrapped.self as? RawColumnNullable.Type {
 			
 			if type.isRawColumnNull(rawColumn) {
 				
@@ -157,7 +157,7 @@ extension Optional where T : RawColumnConvertible {
 			}
 		}
 		
-		if let value = T.fromRawColumn(rawColumn) as? T {
+		if let value = Wrapped.fromRawColumn(rawColumn) as? Wrapped {
 			
 			return Optional(value)
 		}
