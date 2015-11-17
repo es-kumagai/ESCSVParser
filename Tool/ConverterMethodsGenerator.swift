@@ -33,11 +33,11 @@ for j in startCode ... endCode {
 		values.append("self.column(\(valueName)) as \(typeName)")
 	}
 	
-	let params = ", ".join(parameters)
-	let paramConditions = ", ".join(parameterConditions)
-	let args = ", ".join(arguments)
-	let tups = ", ".join(tuples)
-	let vals = ", ".join(values)
+    let params = parameters.joinWithSeparator(", ")
+    let paramConditions = parameterConditions.joinWithSeparator(", ")
+    let args = arguments.joinWithSeparator(", ")
+    let tups = tuples.joinWithSeparator(", ")
+    let vals = values.joinWithSeparator(", ")
 	
 	results += [""]
 	results += ["\tpublic func make<\(params) where \(paramConditions)>(creation:(\(tups))->Result)(\(args)) throws -> Result {"]
@@ -48,6 +48,6 @@ for j in startCode ... endCode {
 
 results += ["}"]
 
-let code = "\n".join(results)
+let code = results.joinWithSeparator("\n")
 
 print(code)

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B12E05E11B57C8E50019D28D /* CSVRawColumnType_OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E05E01B57C8E50019D28D /* CSVRawColumnType_OSX.swift */; };
 		B12E05E31B57C9440019D28D /* RawColumnTypeConvertTest_OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E05E21B57C9440019D28D /* RawColumnTypeConvertTest_OSX.swift */; };
+		B16325441BFAE870009C5FB5 /* ESCSVParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06F8C1B56815D00FD538C /* ESCSVParserTests.swift */; };
+		B16325451BFAE871009C5FB5 /* ESCSVParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06F8C1B56815D00FD538C /* ESCSVParserTests.swift */; };
 		B1C06FA61B56821700FD538C /* ESCSVParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C06F9C1B56821700FD538C /* ESCSVParser.framework */; };
 		B1C06FAB1B56821700FD538C /* ESCSVParser_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C06FAA1B56821700FD538C /* ESCSVParser_OSXTests.swift */; };
 		B1C06FBB1B56823D00FD538C /* ESCSVParser_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C06FBA1B56823D00FD538C /* ESCSVParser_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -470,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B16325451BFAE871009C5FB5 /* ESCSVParserTests.swift in Sources */,
 				B12E05E31B57C9440019D28D /* RawColumnTypeConvertTest_OSX.swift in Sources */,
 				B1C070021B56B34400FD538C /* RawColumnTypeConvertTest.swift in Sources */,
 				B1C06FFB1B568AA800FD538C /* Sample1Row.swift in Sources */,
@@ -498,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1C070031B56B34400FD538C /* RawColumnTypeConvertTest.swift in Sources */,
+				B16325441BFAE870009C5FB5 /* ESCSVParserTests.swift in Sources */,
 				B1C06FFC1B568AA800FD538C /* Sample1Row.swift in Sources */,
 				B1C06FC71B56823D00FD538C /* ESCSVParser_iOSTests.swift in Sources */,
 			);
