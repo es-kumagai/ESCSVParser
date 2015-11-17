@@ -36,25 +36,35 @@ class ESCSVParserTests: XCTestCase {
 			let row4 = csv[4]
 			let row5 = csv[5]
 			
+			print("Row 1 : \(row1)")
+			
 			XCTAssertEqual(row1.country, "日本国")
 			XCTAssertEqual(row1.capital, "東京")
 			XCTAssertEqual(row1.population, 127767944)
 			XCTAssertNil(row1.favolite)
 			
+			print("Row 2 : \(row2)")
+			
 			XCTAssertEqual(row2.country, "アメリカ合衆国")
 			XCTAssertEqual(row2.capital, "ワシントン")
 			XCTAssertEqual(row2.population, 300007997)
-			XCTAssertNotNil(row2.favolite)
+			XCTAssertEqual(row2.favolite, true)
+			
+			print("Row 3 : \(row3)")
 			
 			XCTAssertEqual(row3.country, "日本国")
 			XCTAssertEqual(row3.capital, "東京")
 			XCTAssertEqual(row3.population, 127767944)
 			XCTAssertNil(row3.favolite)
 			
+			print("Row 4 : \(row4)")
+			
 			XCTAssertEqual(row4.country, "日本国")
 			XCTAssertEqual(row4.capital, "東京")
 			XCTAssertEqual(row4.population, 127767944)
-			XCTAssertNil(row4.favolite)
+			XCTAssertEqual(row4.favolite, false)
+			
+			print("Row 5 : \(row5)")
 			
 			XCTAssertEqual(row5.country, "日本国")
 			XCTAssertEqual(row5.capital, "東\"京")

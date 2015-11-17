@@ -146,36 +146,25 @@ extension Bool : RawColumnConvertible, RawColumnNullableAndConsiderEmptyAsNull {
 
 public protocol RawColumnConvertibleOptional : RawColumnConvertible, NilLiteralConvertible {
 	
-    typealias WrappedType
-    typealias ConvertedType : NilLiteralConvertible = Self
-    
-    init(_ some: WrappedType)
 }
 
-extension RawColumnConvertibleOptional {
+extension Optional : RawColumnConvertibleOptional, RawColumnNullable {
+
+	public typealias ValueType = Wrapped
 	
-	public static func fromRawColumn(rawColumn: RawColumn) throws -> ConvertedType {
+	public static func isRawColumnNull(rawColumn: RawColumn) -> Bool {
 		
-        guard rawColumn.isEmpty else {
-            
-            throw CSVParserError.FromRawColumnError
-        }
-        
-		return nil
+		guard let wrappedType = Wrapped.self as? RawColumnNullable.Type else {
+			
+			return false
+		}
+		
+		return wrappedType.isRawColumnNull(rawColumn)
 	}
-}
-
-extension Optional : RawColumnConvertibleOptional {
-
-    public typealias WrappedType = Wrapped
-    public typealias ConvertedType = Optional
-}
-
-extension RawColumnConvertibleOptional where WrappedType : RawColumnConvertible, ConvertedType == Self {
-
-	public static func fromRawColumn(rawColumn: RawColumn) throws -> ConvertedType {
+	
+	public static func fromRawColumn(rawColumn: RawColumn) throws -> Optional {
 		
-		if let type = WrappedType.self as? RawColumnNullable.Type {
+		if let type = Wrapped.self as? RawColumnNullable.Type {
 			
 			if type.isRawColumnNull(rawColumn) {
 				
@@ -183,13 +172,11 @@ extension RawColumnConvertibleOptional where WrappedType : RawColumnConvertible,
 			}
 		}
 		
-		if let value = try WrappedType.fromRawColumn(rawColumn) as? WrappedType {
+		guard let wrappedType = Wrapped.self as? _RawColumnConvertible.Type else {
 			
-			return Self.init(value)
+			throw CSVParserError.FromRawColumnError
 		}
-		else {
-			
-			return nil
-		}
+		
+		return try Optional(wrappedType._fromRawColumn(rawColumn) as! Wrapped)
 	}
 }

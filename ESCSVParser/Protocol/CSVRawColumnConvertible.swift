@@ -57,9 +57,22 @@ extension RawColumn : StringLiteralConvertible {
 	}
 }
 
+public protocol _RawColumnConvertible {
+	
+	static func _fromRawColumn(rawColumn:RawColumn) throws -> Any
+}
+
+extension _RawColumnConvertible where Self : RawColumnConvertible {
+	
+	public static func _fromRawColumn(rawColumn:RawColumn) throws -> Any {
+		
+		return try self.fromRawColumn(rawColumn) as ConvertedType
+	}
+}
+
 /// A type that conforms to this protocol can be converted from raw column string.
 /// If you want to use a type as csv column type, the type must be conforms to this protocol.
-public protocol RawColumnConvertible {
+public protocol RawColumnConvertible : _RawColumnConvertible {
 	
 	typealias ConvertedType = Self
 	

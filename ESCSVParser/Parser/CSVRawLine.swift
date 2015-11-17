@@ -52,6 +52,17 @@ extension RawLine {
 
 	static func column<R:RawColumnConvertible where R == R.ConvertedType>(rawColumn:RawColumn) throws -> R {
 		
+		let isNilLiteralConvertibleType = R.self is NilLiteralConvertible.Type
+		let isRawColumnNullableType = R.self is RawColumnNullable.Type
+		
+		if isNilLiteralConvertibleType && isRawColumnNullableType {
+			
+			if (R.self as! RawColumnNullable.Type).isRawColumnNull(rawColumn) {
+				
+				return (R.self as! NilLiteralConvertible.Type).init(nilLiteral: ()) as! R
+			}
+		}
+		
 		guard let result = try? R.fromRawColumn(rawColumn) else {
 		
 			throw CSVParserError.ConvertError("Failed to convert column type from 'String'(\(rawColumn)) to '\(R.self)'.")
