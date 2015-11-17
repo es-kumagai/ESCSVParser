@@ -24,6 +24,6 @@ class RawColumnTypeConvertTest_OSX: XCTestCase {
     func testConvert_OSX() {
 
 		XCTAssertEqual(Float80.fromRawColumn("53.53")!, 53.53)
-		XCTAssertEqual((Float80?.fromRawColumn("53.53")!)!, 53.53)
+		XCTAssertEqual(Float80?.fromRawColumn("53.53")!, 53.53)
 	}
 }
