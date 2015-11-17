@@ -107,7 +107,7 @@ extension Bool : RawColumnNullable {
 
 ## Requirements
 
-* Swift 2.0 (Xcode 7.0 beta 3)
+* Swift 2.1 (Xcode 7.1)
 * iOS 8.0 or later / OS X 10.9 or later
 
 ## Installation
