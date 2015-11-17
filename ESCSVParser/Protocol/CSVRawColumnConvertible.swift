@@ -63,7 +63,8 @@ public protocol RawColumnConvertible {
 	
 	typealias ConvertedType = Self
 	
-	static func fromRawColumn(rawColumn:RawColumn) -> ConvertedType?
+    /// - throws: CSVParserError.FromRawColumnError raised if `rawColumn` cannot convert to `ConvertedType`.
+	static func fromRawColumn(rawColumn:RawColumn) throws -> ConvertedType
 }
 
 /// When a type that conforms to 'RawColumnConvertible' protocol is uses as Optional,

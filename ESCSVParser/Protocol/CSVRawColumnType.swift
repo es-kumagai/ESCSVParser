@@ -11,18 +11,28 @@
 /// You can able to convert a raw column data to any signed integer types.
 extension RawColumnConvertible where Self : SignedIntegerType {
 	
-	public static func fromRawColumn(rawColumn: RawColumn) -> Self? {
+	public static func fromRawColumn(rawColumn: RawColumn) throws -> Self {
 		
-		return IntMax(rawColumn.value).map(self.init)
+        guard let result = IntMax(rawColumn.value).map(self.init) else {
+            
+            throw CSVParserError.FromRawColumnError
+        }
+        
+        return result
 	}
 }
 
 /// You can able to convert a raw column data to any signed integer types.
 extension RawColumnConvertible where Self : UnsignedIntegerType {
 	
-	public static func fromRawColumn(rawColumn: RawColumn) -> Self? {
+	public static func fromRawColumn(rawColumn: RawColumn) throws -> Self {
 		
-		return UIntMax(rawColumn.value).map(self.init)
+        guard let result = UIntMax(rawColumn.value).map(self.init) else {
+            
+            throw CSVParserError.FromRawColumnError
+        }
+        
+        return result
 	}
 }
 
@@ -75,9 +85,14 @@ public protocol ASCIIRepresentation {
 
 extension RawColumnConvertible where Self : ASCIIRepresentation {
 	
-	public static func fromRawColumn(rawColumn: RawColumn) -> Self? {
+	public static func fromRawColumn(rawColumn: RawColumn) throws -> Self {
 		
-		return self.init(rawColumn.value)
+        guard let result = self.init(rawColumn.value) else {
+            
+            throw CSVParserError.FromRawColumnError
+        }
+        
+        return result
 	}
 }
 
@@ -101,7 +116,7 @@ extension Float : RawColumnConvertible, RawColumnNullableAndConsiderEmptyAsNull 
 
 extension String : RawColumnConvertible {
 	
-	public static func fromRawColumn(rawColumn: RawColumn) -> String? {
+	public static func fromRawColumn(rawColumn: RawColumn) -> String {
 		
 		return rawColumn.value
 	}
@@ -111,7 +126,7 @@ extension String : RawColumnConvertible {
 
 extension Bool : RawColumnConvertible, RawColumnNullableAndConsiderEmptyAsNull {
 	
-	public static func fromRawColumn(rawColumn: RawColumn) -> Bool? {
+	public static func fromRawColumn(rawColumn: RawColumn) throws -> Bool {
 		
 		switch rawColumn.value.lowercaseString {
 			
@@ -122,44 +137,56 @@ extension Bool : RawColumnConvertible, RawColumnNullableAndConsiderEmptyAsNull {
 			return false
 			
 		default:
-			return nil
+			throw CSVParserError.FromRawColumnError
 		}
 	}
 }
 
 // MARK: Optional Type
 
-public protocol RawColumnConvertibleOptional : RawColumnConvertible {
+public protocol RawColumnConvertibleOptional : RawColumnConvertible, NilLiteralConvertible {
 	
+    typealias WrappedType
+    typealias ConvertedType : NilLiteralConvertible
+    
+    init(_ some: WrappedType)
 }
 
 extension RawColumnConvertibleOptional {
 	
-	public static func fromRawColumn(rawColumn: RawColumn) -> Self? {
+	public static func fromRawColumn(rawColumn: RawColumn) throws -> ConvertedType {
 		
+        guard rawColumn.isEmpty else {
+            
+            throw CSVParserError.FromRawColumnError
+        }
+        
 		return nil
 	}
 }
 
 extension Optional : RawColumnConvertibleOptional {
-	
+
+    public typealias WrappedType = Wrapped
+    public typealias ConvertedType = Optional
+    
 }
 
-extension Optional where Wrapped : RawColumnConvertible {
+extension RawColumnConvertibleOptional where WrappedType : RawColumnConvertible {
 
-	public static func fromRawColumn(rawColumn: RawColumn) -> Optional<Wrapped>? {
+	public static func fromRawColumn(rawColumn: RawColumn) throws -> Self {
 		
-		if let type = Wrapped.self as? RawColumnNullable.Type {
+		if let type = WrappedType.self as? RawColumnNullable.Type {
 			
 			if type.isRawColumnNull(rawColumn) {
 				
-				return Optional?(nil)
+				return nil
 			}
 		}
 		
-		if let value = Wrapped.fromRawColumn(rawColumn) as? Wrapped {
+		if let value = try WrappedType.fromRawColumn(rawColumn) as? WrappedType {
 			
-			return Optional(value)
+			return Self.init(value)
 		}
 		else {
 			

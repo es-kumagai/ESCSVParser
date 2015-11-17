@@ -10,4 +10,5 @@ public enum CSVParserError : ErrorType {
 	
 	case ConvertError(String)
 	case ParseError(String)
+    case FromRawColumnError
 }

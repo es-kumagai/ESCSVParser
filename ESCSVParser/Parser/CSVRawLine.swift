@@ -52,8 +52,8 @@ extension RawLine {
 	
 	static func column<R:RawColumnConvertible where R == R.ConvertedType>(rawColumn:RawColumn) throws -> R {
 		
-		guard let result = R.fromRawColumn(rawColumn) else {
-			
+		guard let result = try? R.fromRawColumn(rawColumn) else {
+		
 			throw CSVParserError.ConvertError("Failed to convert column type from 'String'(\(rawColumn)) to '\(R.self)'.")
 		}
 		
