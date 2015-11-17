@@ -157,6 +157,7 @@
 				B1C06F7E1B56815D00FD538C /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		B1C06F7E1B56815D00FD538C /* Products */ = {
 			isa = PBXGroup;

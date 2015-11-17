@@ -147,7 +147,7 @@ extension Bool : RawColumnConvertible, RawColumnNullableAndConsiderEmptyAsNull {
 public protocol RawColumnConvertibleOptional : RawColumnConvertible, NilLiteralConvertible {
 	
     typealias WrappedType
-    typealias ConvertedType : NilLiteralConvertible
+    typealias ConvertedType : NilLiteralConvertible = Self
     
     init(_ some: WrappedType)
 }
@@ -169,12 +169,11 @@ extension Optional : RawColumnConvertibleOptional {
 
     public typealias WrappedType = Wrapped
     public typealias ConvertedType = Optional
-    
 }
 
-extension RawColumnConvertibleOptional where WrappedType : RawColumnConvertible {
+extension RawColumnConvertibleOptional where WrappedType : RawColumnConvertible, ConvertedType == Self {
 
-	public static func fromRawColumn(rawColumn: RawColumn) throws -> Self {
+	public static func fromRawColumn(rawColumn: RawColumn) throws -> ConvertedType {
 		
 		if let type = WrappedType.self as? RawColumnNullable.Type {
 			

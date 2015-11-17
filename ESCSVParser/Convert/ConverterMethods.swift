@@ -16,7 +16,7 @@ extension RawLine {
 	}
 
 	public func make<Result, A:RawColumnConvertible, B:RawColumnConvertible, C:RawColumnConvertible, D:RawColumnConvertible where A == A.ConvertedType, B == B.ConvertedType, C == C.ConvertedType, D == D.ConvertedType>(creation:(A, B, C, D)->Result)(from a:Int, _ b:Int, _ c:Int, _ d:Int) throws -> Result {
-
+		
 		return try Converter((self.column(a) as A, self.column(b) as B, self.column(c) as C, self.column(d) as D)).into(creation)
 	}
 
