@@ -76,7 +76,7 @@ If you want to other types, you will create a type which conforms to `RawColumnC
 ```swift
 extension Bool : RawColumnConvertible {
 	
-	public static func fromRawColumn(rawColumn: RawColumn) -> Bool {
+	public static func fromRawColumn(rawColumn: RawColumn) throws -> Bool {
 		
 		switch rawColumn.value.lowercaseString {
 			
