@@ -87,13 +87,13 @@ extension Bool : RawColumnConvertible {
 			return false
 			
 		default:
-			throw CSVParserError.FromRawColumnError
+			throw FromRawColumnError()
 		}
 	}
 }
 ```
 
-> It needs to throw `CSVParserError.FromRawColumnError` if the type cannot convert from `rawColumn` value.
+> It needs to throw `FromRawColumnError` if the type cannot convert from `rawColumn` value.
 
 ### <a name="OptionalSupport">Optional support</a>
 

@@ -63,12 +63,17 @@ extension RawLine {
 			}
 		}
 		
-		guard let result = try? R.fromRawColumn(rawColumn) else {
-		
-			throw CSVParserError.ConvertError("Failed to convert column type from 'String'(\(rawColumn)) to '\(R.self)'.")
+		do {
+			
+			return try R.fromRawColumn(rawColumn)
 		}
-		
-		return result
+		catch let error as FromRawColumnError {
+
+			let message = "Failed to convert column type from 'String'(\(rawColumn)) to '\(R.self)'."
+			let reasonSuffix = error.reason.map { " \($0)" } ?? ""
+			
+			throw CSVParserError.ConvertError(message + reasonSuffix)
+		}
 	}
 	
 	/// Returns an any type that conforms to 'RawColumnConvertible' protocol that converted from raw column string at 'index'.

@@ -10,5 +10,19 @@ public enum CSVParserError : ErrorType {
 	
 	case ConvertError(String)
 	case ParseError(String)
-    case FromRawColumnError
+}
+
+public struct FromRawColumnError : ErrorType {
+	
+	public var reason:String?
+	
+	public init() {
+		
+		self.reason = nil
+	}
+	
+	public init(reason: String) {
+		
+		self.reason = reason
+	}
 }

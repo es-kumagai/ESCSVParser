@@ -15,7 +15,7 @@ extension RawColumnConvertible where Self : SignedIntegerType {
 		
         guard let result = IntMax(rawColumn.value).map(self.init) else {
             
-            throw CSVParserError.FromRawColumnError
+            throw FromRawColumnError()
         }
         
         return result
@@ -29,7 +29,7 @@ extension RawColumnConvertible where Self : UnsignedIntegerType {
 		
         guard let result = UIntMax(rawColumn.value).map(self.init) else {
             
-            throw CSVParserError.FromRawColumnError
+            throw FromRawColumnError()
         }
         
         return result
@@ -89,7 +89,7 @@ extension RawColumnConvertible where Self : ASCIIRepresentation {
 		
         guard let result = self.init(rawColumn.value) else {
             
-            throw CSVParserError.FromRawColumnError
+            throw FromRawColumnError()
         }
         
         return result
@@ -137,7 +137,7 @@ extension Bool : RawColumnConvertible, RawColumnNullableAndConsiderEmptyAsNull {
 			return false
 			
 		default:
-			throw CSVParserError.FromRawColumnError
+			throw FromRawColumnError()
 		}
 	}
 }
@@ -174,7 +174,7 @@ extension Optional : RawColumnConvertibleOptional, RawColumnNullable {
 		
 		guard let wrappedType = Wrapped.self as? _RawColumnConvertible.Type else {
 			
-			throw CSVParserError.FromRawColumnError
+			throw FromRawColumnError(reason: "Wrapped type '\(Wrapped.self) is not a `RawColumnConvertible` type.")
 		}
 		
 		return try Optional(wrappedType._fromRawColumn(rawColumn) as! Wrapped)
