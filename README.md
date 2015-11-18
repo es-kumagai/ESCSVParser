@@ -67,6 +67,8 @@ You can assign types that conforms to `RawColumnConvertible` protocol to propert
 
 It is already conforms that types `Int`, `Int8`, `Int16`, `Int32`, `Int64`, `UInt`, `UInt8`, `UInt16`, `UInt32`, `UInt64`, `String`, `Double`, `Float`, `Float80`, `Bool` and `Optional<T>` which these type have.
 
+> You can make any CSV Column type using `RawColumnConvertible `.
+
 ### Custom type support
 
 If you want to other types, you will create a type which conforms to `RawColumnConvertible` protocol. A type which conforms to this protocol and implement `fromRawColumn` method can convert from a raw column value.
@@ -74,7 +76,7 @@ If you want to other types, you will create a type which conforms to `RawColumnC
 ```swift
 extension Bool : RawColumnConvertible {
 	
-	public static func fromRawColumn(rawColumn: RawColumn) -> Bool? {
+	public static func fromRawColumn(rawColumn: RawColumn) -> Bool {
 		
 		switch rawColumn.value.lowercaseString {
 			
@@ -85,11 +87,13 @@ extension Bool : RawColumnConvertible {
 			return false
 			
 		default:
-			return nil
+			throw CSVParserError.FromRawColumnError
 		}
 	}
 }
 ```
+
+> It needs to throw `CSVParserError.FromRawColumnError` if the type cannot convert from `rawColumn` value.
 
 ### <a name="OptionalSupport">Optional support</a>
 
